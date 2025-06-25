@@ -1,0 +1,378 @@
+/*
+  Glassmorphism-inspired styles for the chatbot UI, bar chart, and iMessage-like chat bubbles with smooth transitions.
+*/
+
+body, .glass-bg {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #e0e7ef 0%, #c9e7fa 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.glass-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(120deg, rgba(255,255,255,0.7) 0%, rgba(200,225,255,0.5) 100%);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+}
+
+.glass-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  margin: 2rem auto 1.5rem auto;
+  max-width: 900px;
+  border-radius: 2rem;
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+  backdrop-filter: blur(10px);
+}
+.glass-nav .logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #2d3a4a;
+  text-shadow: 0 2px 8px rgba(200,225,255,0.3);
+}
+.glass-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.glass-nav a {
+  color: #2d3a4a;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.glass-nav a:hover {
+  background: rgba(200,225,255,0.3);
+  color: #3b82f6;
+}
+.glass-nav a.active {
+  background: rgba(59,130,246,0.12);
+  color: #2563eb;
+}
+
+.glass-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+/* Bar chart styles */
+.glass-bar-chart {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 auto 1.5rem auto;
+  height: 2.2rem;
+  align-items: flex-end;
+  width: 120px;
+}
+.bar {
+  width: 18px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, #3b82f6 0%, #a5d8ff 100%);
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+  transition: height 0.5s cubic-bezier(.4,2,.6,1), background 0.3s;
+}
+.bar1 { height: 1.7rem; }
+.bar2 { height: 2.2rem; background: linear-gradient(180deg, #2563eb 0%, #a5d8ff 100%); }
+.bar3 { height: 1.2rem; }
+.bar4 { height: 1.9rem; background: linear-gradient(180deg, #60a5fa 0%, #a5d8ff 100%); }
+
+/* Chatbox styles */
+.glass-chatbox {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.35);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  height: 420px;
+  min-height: 320px;
+  max-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+.glass-chatbox.expanded {
+  max-height: 520px;
+  box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.18);
+  transform: scale(1.03);
+  overflow: visible;
+}
+.glass-chat-messages {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+  min-height: 80px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-bottom: 0.5rem;
+  transition: max-height 0.5s cubic-bezier(.4,2,.6,1);
+  background: transparent;
+  z-index: 1;
+}
+.glass-chat-msg {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 1.3rem;
+  font-size: 1.08rem;
+  max-width: 80%;
+  word-break: break-word;
+  margin-bottom: 0.1rem;
+  opacity: 1;
+  animation: none;
+  transition: background 0.3s, color 0.3s;
+}
+.glass-chat-msg.user {
+  align-self: flex-end;
+  background: rgba(255,255,255,0.95);
+  color: #2d3a4a;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+  border-bottom-right-radius: 0.4rem;
+}
+.glass-chat-msg.bot {
+  align-self: flex-start;
+  background: linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%);
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.13);
+  border-bottom-left-radius: 0.4rem;
+}
+.glass-chat-msg.typing {
+  background: linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%);
+  color: #fff;
+  opacity: 0.8;
+  font-style: italic;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  border-bottom-left-radius: 0.4rem;
+}
+.typing-dots {
+  display: inline-block;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  animation: blink 1.2s infinite steps(1, end);
+}
+.typing-dots span {
+  opacity: 0.5;
+  animation: typingDot 1.2s infinite;
+}
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes typingDot {
+  0%, 80%, 100% { opacity: 0.5; }
+  40% { opacity: 1; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.glass-chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  z-index: 2;
+  background: transparent;
+}
+
+.glass-chat-label {
+  font-size: 1.2rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(200,225,255,0.15);
+}
+.glass-chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.glass-chat-input {
+  flex: 1;
+  border-radius: 1.2rem;
+  border: none;
+  padding: 0.7rem 1.1rem;
+  font-size: 1.1rem;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+.glass-chat-input:focus {
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
+}
+.glass-chat-send {
+  background: linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+  transition: background 0.2s;
+}
+.glass-chat-send:hover {
+  background: linear-gradient(120deg, #2563eb 0%, #60a5fa 100%);
+}
+
+.glass-about-section {
+  background: rgba(255,255,255,0.38);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.22);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInAbout 0.6s cubic-bezier(.4,2,.6,1);
+}
+@keyframes fadeInAbout {
+  from { opacity: 0; transform: translateY(32px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.glass-about-back {
+  align-self: flex-start;
+  margin-bottom: 1.2rem;
+  background: rgba(59,130,246,0.13);
+  color: #2563eb;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.4rem 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+  transition: background 0.2s;
+}
+.glass-about-back:hover {
+  background: rgba(59,130,246,0.22);
+}
+.glass-about-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2d3a4a;
+  margin-bottom: 0.7rem;
+  text-shadow: 0 2px 16px rgba(200,225,255,0.13);
+}
+.glass-about-desc {
+  font-size: 1.15rem;
+  color: #2563eb;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 1px 8px rgba(200,225,255,0.10);
+}
+.glass-about-gallery {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.glass-about-img-wrap {
+  background: rgba(255,255,255,0.55);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.10);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.glass-about-img-wrap:hover {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.16);
+  transform: scale(1.04);
+}
+.glass-about-img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+}
+.glass-about-details {
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,0.22);
+  border-radius: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.07);
+  width: 100%;
+  max-width: 500px;
+}
+.glass-about-details h3 {
+  margin-top: 0;
+  color: #2563eb;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.glass-about-details ul {
+  margin: 0.7rem 0 0 0;
+  padding-left: 1.2rem;
+  color: #2d3a4a;
+  font-size: 1.08rem;
+}
+
+.glass-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem 0 1.5rem 0;
+  background: rgba(255,255,255,0.18);
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0 -2px 16px 0 rgba(31, 38, 135, 0.08);
+  color: #2d3a4a;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .glass-card-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .glass-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .glass-chatbox {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+}

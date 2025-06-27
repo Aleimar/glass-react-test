@@ -5,7 +5,7 @@
 body, .glass-bg {
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #e0e7ef 0%, #c9e7fa 100%);
+  background: linear-gradient(135deg, #f4f6f8 0%, #f7efe3 100%);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -16,7 +16,7 @@ body, .glass-bg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(120deg, rgba(255,255,255,0.7) 0%, rgba(200,225,255,0.5) 100%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.7) 0%, rgba(176,141,87,0.08) 100%);
   backdrop-filter: blur(8px);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
 }
@@ -29,7 +29,7 @@ body, .glass-bg {
   margin: 2rem auto 1.5rem auto;
   max-width: 900px;
   border-radius: 2rem;
-  background: rgba(255,255,255,0.25);
+  background: rgba(176,141,87,0.10);
   box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
   backdrop-filter: blur(10px);
 }
@@ -37,8 +37,8 @@ body, .glass-bg {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #2d3a4a;
-  text-shadow: 0 2px 8px rgba(200,225,255,0.3);
+  color: #b08d57;
+  text-shadow: 0 2px 8px rgba(176,141,87,0.10);
 }
 .glass-nav ul {
   display: flex;
@@ -48,7 +48,7 @@ body, .glass-bg {
   padding: 0;
 }
 .glass-nav a {
-  color: #2d3a4a;
+  color: #b08d57;
   font-weight: 500;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -56,12 +56,12 @@ body, .glass-bg {
   transition: background 0.2s, color 0.2s;
 }
 .glass-nav a:hover {
-  background: rgba(200,225,255,0.3);
-  color: #3b82f6;
+  background: rgba(176,141,87,0.13);
+  color: #a67c52;
 }
 .glass-nav a.active {
-  background: rgba(59,130,246,0.12);
-  color: #2563eb;
+  background: rgba(176,141,87,0.18);
+  color: #a67c52;
 }
 
 .glass-hero {
@@ -85,14 +85,14 @@ body, .glass-bg {
 .bar {
   width: 18px;
   border-radius: 8px 8px 0 0;
-  background: linear-gradient(180deg, #3b82f6 0%, #a5d8ff 100%);
+  background: linear-gradient(180deg, #b08d57 0%, #f7efe3 100%);
   box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
   transition: height 0.5s cubic-bezier(.4,2,.6,1), background 0.3s;
 }
 .bar1 { height: 1.7rem; }
-.bar2 { height: 2.2rem; background: linear-gradient(180deg, #2563eb 0%, #a5d8ff 100%); }
+.bar2 { height: 2.2rem; background: linear-gradient(180deg, #a67c52 0%, #f7efe3 100%); }
 .bar3 { height: 1.2rem; }
-.bar4 { height: 1.9rem; background: linear-gradient(180deg, #60a5fa 0%, #a5d8ff 100%); }
+.bar4 { height: 1.9rem; background: linear-gradient(180deg, #a67c52 0%, #f7efe3 100%); }
 
 /* Chatbox styles */
 .glass-chatbox {
@@ -103,7 +103,7 @@ body, .glass-bg {
   border-radius: 2rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
   backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(255,255,255,0.25);
+  border: 1.5px solid rgba(176,141,87,0.18);
   padding: 2.2rem 1.5rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -150,19 +150,19 @@ body, .glass-bg {
 .glass-chat-msg.user {
   align-self: flex-end;
   background: rgba(255,255,255,0.95);
-  color: #2d3a4a;
+  color: #b08d57;
   box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
   border-bottom-right-radius: 0.4rem;
 }
 .glass-chat-msg.bot {
   align-self: flex-start;
-  background: linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(120deg, #b08d57 0%, #a67c52 100%);
   color: #fff;
   box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.13);
   border-bottom-left-radius: 0.4rem;
 }
 .glass-chat-msg.typing {
-  background: linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(120deg, #b08d57 0%, #a67c52 100%);
   color: #fff;
   opacity: 0.8;
   font-style: italic;
@@ -208,7 +208,7 @@ body, .glass-bg {
 
 .glass-chat-label {
   font-size: 1.2rem;
-  color: #2563eb;
+  color: #b08d57;
   font-weight: 600;
   margin-bottom: 0.2rem;
   text-align: left;
@@ -233,7 +233,7 @@ body, .glass-bg {
   box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.15);
 }
 .glass-chat-send {
-  background: linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(120deg, #b08d57 0%, #a67c52 100%);
   color: #fff;
   border: none;
   border-radius: 1.2rem;
@@ -245,7 +245,7 @@ body, .glass-bg {
   transition: background 0.2s;
 }
 .glass-chat-send:hover {
-  background: linear-gradient(120deg, #2563eb 0%, #60a5fa 100%);
+  background: linear-gradient(120deg, #a67c52 0%, #b08d57 100%);
 }
 
 .glass-about-section {
@@ -253,7 +253,7 @@ body, .glass-bg {
   border-radius: 2rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
   backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(255,255,255,0.22);
+  border: 1.5px solid rgba(176,141,87,0.18);
   padding: 2.5rem 2rem 2rem 2rem;
   max-width: 700px;
   margin: 0 auto;
@@ -269,8 +269,8 @@ body, .glass-bg {
 .glass-about-back {
   align-self: flex-start;
   margin-bottom: 1.2rem;
-  background: rgba(59,130,246,0.13);
-  color: #2563eb;
+  background: rgba(176,141,87,0.13);
+  color: #b08d57;
   border: none;
   border-radius: 1.2rem;
   padding: 0.4rem 1.1rem;
@@ -281,18 +281,18 @@ body, .glass-bg {
   transition: background 0.2s;
 }
 .glass-about-back:hover {
-  background: rgba(59,130,246,0.22);
+  background: rgba(176,141,87,0.22);
 }
 .glass-about-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #2d3a4a;
+  color: #b08d57;
   margin-bottom: 0.7rem;
   text-shadow: 0 2px 16px rgba(200,225,255,0.13);
 }
 .glass-about-desc {
   font-size: 1.15rem;
-  color: #2563eb;
+  color: #a67c52;
   margin-bottom: 2rem;
   text-align: center;
   text-shadow: 0 1px 8px rgba(200,225,255,0.10);
@@ -336,7 +336,7 @@ body, .glass-bg {
 }
 .glass-about-details h3 {
   margin-top: 0;
-  color: #2563eb;
+  color: #b08d57;
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -358,6 +358,36 @@ body, .glass-bg {
   font-size: 1.1rem;
   font-weight: 500;
   margin-top: 2rem;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 2em;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(26,38,54,0.08);
+  border-top: 6px solid #b08d57;
+}
+
+.header {
+  background: #b08d57;
+  color: #fff;
+  padding: 1.5em 2em;
+  border-radius: 10px 10px 0 0;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.main-content {
+  padding: 2em 0;
+}
+
+/* Subtle divider */
+.divider {
+  border-bottom: 1px solid #e0e3e8;
+  margin: 2em 0;
 }
 
 @media (max-width: 900px) {
